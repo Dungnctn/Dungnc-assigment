@@ -27,3 +27,7 @@ export const update = (post) => {
     return instance.put(url, post);
     // sdung method put để gửi post theo id lên api
 }
+
+export const cart = () => {
+    
+}

@@ -6,6 +6,8 @@ import AdminEditNew from "./page/admin/newEdit";
 import Home from "./page/home";
 import New from "./page/new";
 import NewDetail from "./page/newDetail";
+import Signin from "./page/sigin";
+import Signup from "./page/signup";
 
 const router = new Navigo("/", {linksSelector: "a"});
 
@@ -35,6 +37,12 @@ router.on({
   },
   "/admin/news": () => {
     print(AdminNew)
+  },
+  "/signin": () => {
+    print(Signin)
+  },
+  "/signup": () => {
+    print(Signup)
   },
   "/admin/news/add": () => {
     print(AdminAddNew)

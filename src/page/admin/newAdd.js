@@ -1,4 +1,4 @@
-import { add } from "../../api/post";
+import { add } from "../../api/products";
 import NavAdmin from "./navAdmin";
 
 
@@ -106,11 +106,11 @@ const AdminAddNew = {
       formAdd.addEventListener("submit",(e) => {
         // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
         e.preventDefault();
-        console.log("submites");
+        // console.log("submites");
         add({
-          "title": document.querySelector("#title-post").value,
-          "img": document.querySelector("#img-post").value,
-          "desc": document.querySelector("#desc-post").value
+          "name": document.querySelector("#title-post").value,
+          "imageIntro": document.querySelector("#img-post").value,
+          "content": document.querySelector("#desc-post").value
         });
         console.log(add)
       }) 

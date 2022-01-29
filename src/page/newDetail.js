@@ -1,4 +1,4 @@
-import { get } from "../api/post";
+import { get } from "../api/products";
 import Header from "../conponent/header";
 import Footer from "../conponent/footer";
 const NewDetail = {
@@ -35,26 +35,26 @@ const NewDetail = {
           <!-- Image gallery -->
           <div class="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
             <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-              <img src="${data.img}" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover">
+              <img src="${data.imageIntro}" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover">
             </div>
             <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
               <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                <img src="${data.img}" alt="Model wearing plain black basic tee." class="w-full h-full object-center object-cover">
+                <img src="${data.imageIntro}" alt="Model wearing plain black basic tee." id="img-cart" class=" w-full h-full object-center object-cover">
               </div>
               <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                <img src="${data.img}" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover">
+                <img src="${data.imageIntro}" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover">
               </div>
             </div>
             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-              <img src="${data.img}" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+              <img src="${data.imageIntro}" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
             </div>
           </div>
 
           <!-- Product info -->
           <div class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
             <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                ${data.title}
+              <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl" id="title-cart">
+                ${data.name}
               </h1>
             </div>
 
@@ -97,7 +97,7 @@ const NewDetail = {
                 </div>
               </div>
 
-              <form class="mt-10">
+              <form class="mt-10" id="form-add">
                 <!-- Colors -->
                 <div>
                   <h3 class="text-sm text-gray-900 font-medium">Màu</h3>
@@ -158,117 +158,25 @@ const NewDetail = {
                       Choose a size
                     </legend>
                     <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed">
-                        <input type="radio" name="size-choice" value="XXS" disabled class="sr-only" aria-labelledby="size-choice-0-label">
-                        <p id="size-choice-0-label">
-                          XXS
-                        </p>
-
-                        <div aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
-                          <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                            <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                          </svg>
-                        </div>
-                      </label>
 
                       <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label">
-                        <p id="size-choice-1-label">
-                          XS
-                        </p>
+                      ${data.size.map((eleSize) => /*html*/ `
+                          <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
+                          <input type="radio" name="size-choice" id="size" value="${eleSize}" class="sr-only" aria-labelledby="size-choice-1-label">
+                          <p id="size-choice-1-label">
+                            ${eleSize}
+                          </p>
 
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label">
-                        <p id="size-choice-2-label">
-                          S
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
+                          <!--
+                            Active: "border", Not Active: "border-2"
+                            Checked: "border-indigo-500", Not Checked: "border-transparent"
+                          -->
+                          <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
+                        </label>
+                      `).join('')}
 
                       <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label">
-                        <p id="size-choice-3-label">
-                          M
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label">
-                        <p id="size-choice-4-label">
-                          L
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label">
-                        <p id="size-choice-5-label">
-                          XL
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="2XL" class="sr-only" aria-labelledby="size-choice-6-label">
-                        <p id="size-choice-6-label">
-                          2XL
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
-
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                        <input type="radio" name="size-choice" value="3XL" class="sr-only" aria-labelledby="size-choice-7-label">
-                        <p id="size-choice-7-label">
-                          3XL
-                        </p>
-
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        <div class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></div>
-                      </label>
+                      
                     </div>
                   </fieldset>
                 </div>
@@ -283,7 +191,7 @@ const NewDetail = {
                 <h3 class="sr-only">Description</h3>
 
                 <div class="space-y-6">
-                  <p class="text-base text-gray-900">${data.desc}</p>
+                  <p class="text-base text-gray-900">${data.content}</p>
                 </div>
               </div>
 
@@ -307,7 +215,7 @@ const NewDetail = {
                 <h2 class="text-sm font-medium text-gray-900">Thông tin chi tiết</h2>
 
                 <div class="mt-4 space-y-6">
-                  <p class="text-sm text-gray-600">Chi tiết sản phẩm</p>
+                  <p class="text-sm text-gray-600">${data.introduce}</p>
                 </div>
               </div>
             </div>
@@ -316,6 +224,34 @@ const NewDetail = {
       </div>
         ${Footer.render()}
         `
+    },
+
+    async afterRender(id) {
+      const { data } = await get(id);
+      // nhận id từ file mainjs
+      const formSubmit = document.querySelector("#form-add");
+      var elems = document.getElementsByName('color-choice');
+      var length = elems.length;
+
+      formSubmit.addEventListener("submit", (e) => {
+        e.preventDefault()
+        //ngăn thuộc tính submit tự động 
+        const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
+        // sử dụng 1 mảng để thêm obj tránh bị ghi đè, 
+        // chuyển đổi về dạng js để đổ data ra browser vì khi nhận từ web server nó luôn là dạng string
+        // console.log("abc")
+        let cartElement = {
+            id: id,
+            name: data.name,
+            imageIntro: data.imageIntro,
+            // price: data.price
+            size: document.querySelector("#size").value
+        };
+        cartList.push(cartElement);
+        localStorage.setItem("cartList", JSON.stringify(cartList))
+      console.log(cartElement)
+      })
+
     }
 }
 export default NewDetail;
