@@ -6,35 +6,35 @@
         },
         {
             "src": "/new",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/news/:id",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/admin/dashboard",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/admin/news",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/signin",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/signup",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/admin/news/add",
-            "src": "/"
+            "dest": "/"
         },
         {
             "src": "/admin/dashboard",
-            "src": "/"
+            "dest": "/"
         }
         
     ]
