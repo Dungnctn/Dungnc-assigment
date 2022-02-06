@@ -1,4 +1,4 @@
-import { getAll, remove } from "../../api/post";
+import { getAll, remove } from "../../api/products";
 import NavAdmin from "./navAdmin";
 
 
@@ -87,17 +87,17 @@ const AdminNew = {
                             <td class="px-6 py-4 whitespace-nowrap">
                               <div class="flex items-center">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                  <img class="h-10 w-10 rounded-full" src="${post.img}" alt="">
+                                  <img class="h-10 w-10 rounded-full" src="${post.imageIntro}" alt="">
                                 </div>
                                 <div class="ml-4">
                                   <div class="text-sm font-medium text-gray-900">
-                                    ${post.title}
+                                    ${post.name}
                                   </div>
                                 </div>
                               </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                              <img src="${post.img}" alt="" width="50%" class="rounded-3xl">
+                              <img src="${post.imageIntro}" alt="" width="30%" class="rounded-3xl">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">

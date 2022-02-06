@@ -1,4 +1,4 @@
-import { add, get, update } from "../../api/post";
+import { add, get, update } from "../../api/products";
 import NavAdmin from "./navAdmin";
 
 
@@ -68,19 +68,28 @@ const AdminEditNew = {
                       <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
                         <label for="first-name" class="block text-sm font-medium text-gray-700">Tiêu đề</label>
-                        <input type="text" name="" id="title-post" value="${data.title}" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="" id="title-post" value="${data.name}" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
           
                         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                           <label for="" class="block text-sm font-medium text-gray-700">Hình ảnh</label>
-                          <input type="text" name="" id="img-post" value="${data.img}" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                          <input type="text" name="" id="img-post" value="${data.imageIntro}" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">Giá niêm yết</label>
+                        <input type="text" name="" id="price-post" value="${data.price}" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+          
+                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                          <label for="" class="block text-sm font-medium text-gray-700">Giá khuyến mãi</label>
+                          <input type="text" name="" id="sale-post" value="${data.sale}" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
           
                         <div class="col-span-6">
                           <label for="street-address" class="block text-sm font-medium text-gray-700">Chi tiết sản phẩm</label>
-                          <input type="text" name="" id="desc-post" value="${data.desc}" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                          <input type="text" name="" id="desc-post" value="${data.content}" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
-          
                         
                       </div>
                     </div>
@@ -111,9 +120,11 @@ const AdminEditNew = {
         console.log("submites");
         update({
           id: id,
-          title: document.querySelector("#title-post").value,
-          img: document.querySelector("#img-post").value,
-          desc: document.querySelector("#desc-post").value
+          name: document.querySelector("#title-post").value,
+          imageIntro: document.querySelector("#img-post").value,
+          price: document.querySelector("#price-post").value,
+          sale: document.querySelector("#sale-post").value,
+          content: document.querySelector("#desc-post").value
         });
         console.log(add)
       }) 
