@@ -3,6 +3,8 @@ import AdminNew from "./page/admin/adminNew";
 import Dashboard from "./page/admin/dashboard";
 import AdminAddNew from "./page/admin/newAdd";
 import AdminEditNew from "./page/admin/newEdit";
+import BorderNew from "./page/borderNew";
+import Cart from "./page/cart";
 import Home from "./page/home";
 import New from "./page/new";
 import NewDetail from "./page/newDetail";
@@ -26,7 +28,7 @@ router.on({
   //   print(Product)
   // },
   "/new": () => {
-    print(New)
+    print(BorderNew)
   },
   "/news/:id": ({ data }) => {
     // detructoring data, lấy id từ data
@@ -43,6 +45,9 @@ router.on({
   },
   "/signup": () => {
     print(Signup)
+  },
+  "/cart": () => {
+    print(Cart)
   },
   "/admin/news/add": () => {
     print(AdminAddNew)

@@ -244,12 +244,15 @@ const NewDetail = {
             id: id,
             name: data.name,
             imageIntro: data.imageIntro,
-            // price: data.price
+            price: data.price,
             size: document.querySelector("#size").value
         };
         cartList.push(cartElement);
+        // thêm element vào aray cartList
         localStorage.setItem("cartList", JSON.stringify(cartList))
-      console.log(cartElement)
+        // Json.stringify chuyển về dạng string
+      // console.log(cartElement)
+      // window.location.pathname = "/cart"
       })
 
     }

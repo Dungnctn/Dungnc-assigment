@@ -112,7 +112,7 @@ const AdminAddNew = {
           "imageIntro": document.querySelector("#img-post").value,
           "content": document.querySelector("#desc-post").value
         });
-        console.log(add)
+        // console.log(add)
       }) 
     }
 }
