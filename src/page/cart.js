@@ -3,7 +3,7 @@ import Header from "../conponent/header";
 const Cart = {
     render() {
         const renderCartList = JSON.parse(localStorage.getItem('cartList'));
-        console.log(renderCartList)
+        // console.log(renderCartList)
         if(localStorage.getItem('cartList') === null){
             return /*html*/ ` ${Header.render()}
                 <div class="my-20">
@@ -12,7 +12,6 @@ const Cart = {
                 `
         }else{
             return /*html*/ `
-                ${Header.render()}
                 <nav aria-label="Breadcrumb">
                 <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
                   <li>
@@ -83,9 +82,9 @@ const Cart = {
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        <input onclick="var result = document.getElementById('quantity'); var qty = result.value; if( !isNaN(qty) &amp; qty > 1 ) result.value--;return false;" type='button' value='-' class=" cursor-pointer h-7 w-14 bg-[#363f4d] text-[#fff] text-xl leading-0"/>
+                                        <input onclick="let t = document.getElementById('quantity').value; if(parseInt(t) > 1) document.getElementById('quantity').value=parseInt(t)-1" type='button' value='-' class=" cursor-pointer h-7 w-14 bg-[#363f4d] text-[#fff] text-xl leading-0"/>
                                         <input id='quantity' min='1' name='quantity' type='text' value='1' class="input-qty h-7 w-14 text-center text-[#7a7a7a]" />
-                                        <input onclick="var result = document.getElementById('quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class=" cursor-pointer h-7 w-14 bg-[#363f4d] text-[#fff] text-xl leading-0"/>
+                                        <input onclick="let t = document.getElementById('quantity').value; document.getElementById('quantity').value=parseInt(t)+1 " type='button' value='+' class=" cursor-pointer h-7 w-14 bg-[#363f4d] text-[#fff] text-xl leading-0"/>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
@@ -128,13 +127,13 @@ const Cart = {
         btns.forEach((btnEle) => {
             const buttonId = btnEle.dataset.id;
             btnEle.addEventListener("click",() => {
-                let a = renderCartList.filter(item => item.id == buttonId);
+                let removeCartId = renderCartList.filter(item => item.id == buttonId);
                 
                 // JSON.stringify(localStorage.removeItem(a));
                 // let c = a.map((i) => {
                 //     return i.id
                 // })
-                console.log(a)
+                console.log(removeCartId)
             })
         });
 

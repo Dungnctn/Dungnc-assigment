@@ -18,6 +18,7 @@ const New = {
                                 ${post.name}
                             </h3>
                             <p class="mt-1 text-sm text-gray-500">${post.classify}</p>
+                            <p class="text-sm font-medium text-gray-900 line-through text-[#ccc]">${post.sale}</p>
                             <p class="text-sm font-medium text-gray-900">${post.price}</p>
                             </a>
                         `).join("")}
