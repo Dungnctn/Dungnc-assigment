@@ -146,7 +146,12 @@ const AdminAddNew = {
             imageIntro: reponse.data.url, //reponse là obj trỏ đến data lấy url
             price: document.querySelector("#price-post").value,
             sale: document.querySelector("#sale-post").value,
-            content: document.querySelector("#desc-post").value
+            content: document.querySelector("#desc-post").value,
+            size: [ "XS",
+                    "S",
+                    "M",
+                    "M-L"
+                  ]
           });
           // console.log(add)
         });

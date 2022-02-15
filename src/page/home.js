@@ -1,5 +1,4 @@
 import Header from "../conponent/header";
-import New from "./new";
 import Footer from "../conponent/footer"
 import BorderNew from "./borderNew";
 import Slider from "./slide";
@@ -11,6 +10,11 @@ const Home = {
             ${await BorderNew.render()}
             ${Footer.render()}
             `
+    },
+
+    afterRender() {
+        Header.afterRender();
+        // vì conponent chưa được thực thi afterRender nên gọi cùng với Home
     }
 }
 export default Home;

@@ -6,8 +6,8 @@ import AdminEditNew from "./page/admin/newEdit";
 import BorderNew from "./page/borderNew";
 import Cart from "./page/cart";
 import Home from "./page/home";
-import New from "./page/new";
 import NewDetail from "./page/newDetail";
+import renderIdCate from "./page/renderidcate";
 import Signin from "./page/signin";
 import Signup from "./page/signup";
 
@@ -33,6 +33,11 @@ router.on({
   "/news/:id": ({ data }) => {
     // detructoring data, lấy id từ data
     print(NewDetail, data.id)
+  },
+
+  "catePro/:catePro": ({data}) => {
+    print(renderIdCate, data.catePro)
+    console.log(data.catePro)
   },
   "/admin/dashboard": () => {
     print(Dashboard)

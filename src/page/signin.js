@@ -70,7 +70,8 @@ const Signin = {
                     password: document.querySelector("#password").value
                 });
                 // alert("Bạn đã đăng nhập thành công!");
-                console.log(reponse);
+                // console.log(reponse);
+                localStorage.setItem("user", JSON.stringify(reponse.data.user));
             } catch (error) {
                 document.querySelector(".er").classList.add("block");
                 document.querySelector(".er").classList.remove("hidden");

@@ -1,11 +1,20 @@
-import { cate } from "../api/products"
-import New from "./new"
+import { cate } from "../api/products";
+import Footer from "../conponent/footer";
+import Header from "../conponent/header";
+import Slider from "./slide";
+const renderIdCate = {
+    async render(catePro) {
+        // detructoring: lấy thuộc tính làm tên biến trong object
+        const { data } = await cate(catePro);
+        console.log(data)
+        // const namecate = data.map((item) => {
+        //     return item.nameCate
+        // })
 
-const BorderNew = {
-    async render() {
         return /*html*/ `
+        ${Header.render()}
         <div class="max-w-9xl text-center mt-20">
-                <span class="uppercase font-bold text-4xl">sản phẩm phổ biến</span>
+                <span class="uppercase font-bold text-4xl">Sản phẩm</span>
             </div>
         <div class="bg-white">
         <div>
@@ -348,19 +357,19 @@ const BorderNew = {
                   <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
                     <li>
                       <a href="/catePro/1">
-                        Áo Nam
+                        balo
                       </a>
                     </li>
       
                     <li>
                       <a href="/catePro/2">
-                        Áo Nữ
+                        Túi
                       </a>
                     </li>
       
                     <li>
                       <a href="/catePro/3">
-                        Váy
+                        Trang sức
                       </a>
                     </li>
       
@@ -576,8 +585,28 @@ const BorderNew = {
                 <div class="lg:col-span-3">
                   <!-- Replace with your content -->
                   <div class=" rounded-lg h-96 lg:h-full">
-                    
-                  ${await New.render()}
+
+                  <div class="bg-white">
+            <div class="max-w-2xl mx-auto py-5 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div class="grid grid-cols-4 gap-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                ${data.map((post) => /*html*/ `
+
+                        <a href="/news/${post.id}" class="group">
+                            <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                                <img src="${post.imageIntro}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="w-full h-full object-center object-cover group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">
+                                ${post.name}
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">${post.classify}</p>
+                            <p class="text-sm font-medium text-gray-900 line-through text-[#ccc]">${post.sale}</p>
+                            <p class="text-sm font-medium text-gray-900">${post.price}</p>
+                            </a>
+                        `).join("")}
+                    <!-- More products... -->
+                </div> 
+                </div>
+            </div>
                     
                   </div>
                   <!-- /End replace -->
@@ -587,7 +616,9 @@ const BorderNew = {
           </main>
         </div>
       </div>
+      ${Footer.render()}
         `
     }
+
 }
-export default BorderNew
+export default renderIdCate;

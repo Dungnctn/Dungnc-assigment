@@ -249,14 +249,24 @@
   "products": [
     {
       "id": 504038,
+      "catePro": 1,
+      "nameCate": "Áo Nam",
       "name": "Matchplay Long Robe Heather Grey",
       "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-still-life-web.jpeg?alt=media&token=98d8d774-5fc6-4e84-96b8-c11ec8c712a4",
       "price": "95",
       "sale": "90",
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "M-L"
+      ],
       "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>"
     },
     {
       "id": 529585,
+      "catePro": 1,
+      "nameCate": "Áo Nam",
       "name": "Matchplay Long Robe Heather Grey",
       "categoryId": "346275",
       "content": "\n\nMorning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>\n\nFall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>\nMade in the USA<br>\n\nBetween the Sheets Collection<br>",
@@ -280,6 +290,8 @@
     },
     {
       "id": 173166,
+      "catePro": 1,
+      "nameCate": "Áo Nam",
       "name": "Deco Lace Robe Peach",
       "categoryId": "346275",
       "content": "inner tie fastens at wearer's right, outer tie at wearer's left<br>\nbias cut 100% silk charmeuse, 100% nylon leavers lace, dry clean only<br>\ndelicate baby hem and french seams<br>\n\nMade in the USA<br>\n\nLayla L'obatti - Specimens of Seduction TM<br>",
@@ -304,6 +316,8 @@
     },
     {
       "id": 625208,
+      "catePro": 2,
+      "nameCate": "Áo Nữ",
       "name": " Arabesque Wrap Robe Gown Lagoon silk",
       "categoryId": "346275",
       "content": "100% silk and hand dyed/hand cut & appliqu�d lace<br>\nMatte charmeuse outer, satin finish against skin<br>\nSilk satin binding at back opening, along neck/front<br>\nDelicate french seams and baby hem<br>\nInverted box pleat with satin outer in contrast with matte body (for those meaningful exits)<br>\nDouble tie with side slit and outer loop allow for easy adjustable fit/sizing<br>\n\n\nDry clean<br>",
@@ -328,6 +342,8 @@
     },
     {
       "id": 79652,
+      "catePro": 2,
+      "nameCate": "Áo Nữ",
       "name": "FINAL SALE Curtain Call Crop Sweatshirt Pink",
       "categoryId": "301505",
       "content": "All colors display some degree of heathering from multiple yarns used, effect is more pronounced on charcoal, heather grey, oatmeal<br>\n\nRibbon drawstring tie at waist lets you cinch a line silhouette<br>\n\nFront pocket with openings and room for both hands<br>\n\nAvoid jewelry that may snag fabric<br>\n\nAvoid washing with items that may snag fabric during wash<br>\n\nMachine wash cold with like colors<br>\n\nDo Not Bleach, No tumble dry. Flat/line dry. No Iron, Steam ok. <br>\n\n87% polyester, 9% rayon, 4% spandex<br>\n\n \n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>",
@@ -353,6 +369,8 @@
     },
     {
       "id": 567428,
+      "catePro": 2,
+      "nameCate": "Áo Nữ",
       "name": "Matchplay Lounge Pant Navy",
       "categoryId": "441038",
       "content": "Wash and Dry on delicate cycle with like colors, Hang or Flat Dry. Steam press, use press cloth to avoid damaging spandex<br>\n\nbody: 95% rayon, 5% spandex<br>\n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>\n\n*Model is 5' 11\" wearing size small<br>\n\nthe silhouette is slightly updated version of our Well Played lounge pant, with slightly more room in thighs and wider waistband.<br>",
@@ -376,6 +394,8 @@
     },
     {
       "id": 612672,
+      "catePro": 2,
+      "nameCate": "Áo Nữ",
       "name": "Cotton Over the Knee Socks Purple",
       "categoryId": "647498",
       "content": "Content & Care Instructions:<br>\n\n-85% Regenerate Cotton, 10% Nylon 5%Elastic<br>\n-Machine wash, tumble dry low (recommend hang/flat dry)<br>\n\n* all legwear is FINAL SALE and cannot be returned or exchanged once opened, please contact us if you are concerned about sizing. <br>\n\nMade in USA by Rock N Socks<br>",
@@ -400,6 +420,8 @@
     },
     {
       "id": 416256,
+      "catePro": 2,
+      "nameCate": "Áo Nữ",
       "name": "Official Yarn Dyed Oversized Stripe",
       "categoryId": "301505",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>\n\n",
@@ -425,6 +447,8 @@
     },
     {
       "id": 488371,
+      "catePro": 3,
+      "nameCate": "Váy",
       "name": "Oversized Stripe MAN Signature",
       "categoryId": "301505",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>",
@@ -448,6 +472,8 @@
     },
     {
       "id": 413354,
+      "catePro": 3,
+      "nameCate": "Váy",
       "name": "Oversized MAN Signature ",
       "categoryId": "301505",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>\n\n",
@@ -473,6 +499,8 @@
     },
     {
       "id": 335329,
+      "catePro": 3,
+      "nameCate": "Váy",
       "name": "MAN Signature Embroidered ",
       "categoryId": "301505",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>",
@@ -499,6 +527,8 @@
     },
     {
       "id": 347563,
+      "catePro": 3,
+      "nameCate": "Váy",
       "name": "Regular Fit Ss Palm Shirt & Short Set",
       "categoryId": "410873",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>\n\n",
@@ -521,6 +551,8 @@
     },
     {
       "id": 349561,
+      "catePro": 3,
+      "nameCate": "Váy",
       "name": "Oversized Flame Sweat & Basketball Short Set",
       "categoryId": "410873",
       "content": "We hope you are satisfied with all of your purchases but if you ever need to return an item, you can do so within 28 days from the date of delivery.<br>\n\nFor hygiene reason, once the seal has been opened on fashion face masks, cosmetics or pierced jewellery, these items can no longer be returned. We please ask you try on swimwear and lingerie over your own underwear and ensure to keep the seal intact.<br>",
@@ -545,14 +577,6 @@
         "XL"
       ],
       "classify": "male"
-    },
-    {
-      "name": "Venus in Play Sleep Tee Peony Viet Nam",
-      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1644252060/gqkvee0csb0tquc5ij5f.jpg",
-      "price": "30",
-      "sale": "29",
-      "content": "helo baby",
-      "id": 625210
     }
   ],
   "users": [

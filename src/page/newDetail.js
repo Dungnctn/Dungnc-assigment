@@ -160,7 +160,7 @@ const NewDetail = {
                     <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
 
                       <!-- Active: "ring-2 ring-indigo-500" -->
-                      ${data.size.map((eleSize) => /*html*/ `
+                      ${ data.size.map((eleSize) => /*html*/ `
                           <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
                           <input type="radio" name="size-choice" id="size" value="${eleSize}" class="sr-only" aria-labelledby="size-choice-1-label">
                           <p id="size-choice-1-label">
