@@ -249,16 +249,10 @@
   "products": [
     {
       "id": 504038,
-      "name": "Matchplay Long Robe Heather Grey",
-      "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-still-life-web.jpeg?alt=media&token=98d8d774-5fc6-4e84-96b8-c11ec8c712a4",
+      "name": "Áo dài",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645170055/kvyefqskfmivpymchgrw.jpg",
       "price": "95",
       "sale": "92",
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "M-L"
-      ],
       "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>"
     },
     {
@@ -575,6 +569,20 @@
         "XL"
       ],
       "classify": "male"
+    },
+    {
+      "name": "helo",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645170223/pz5usks7udgvzjda8xjo.jpg",
+      "price": "30",
+      "sale": "29",
+      "content": "helo baby",
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "M-L"
+      ],
+      "id": 625209
     }
   ],
   "users": [

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { add } from "../../api/products";
 import NavAdmin from "./navAdmin";
-
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+import { reRender } from "../../reRender";
+import AdminNew from "./adminNew";
 
 const AdminAddNew = {
   // render() hiển thị giao diện ra browser
@@ -154,6 +157,9 @@ const AdminAddNew = {
                   ]
           });
           // console.log(add)
+          toastr.success("Bạn đã thêm sản phẩm");
+          reRender(AdminNew, "#app")
+          window.location.href="/#/admin/news";
         });
         
         // console.log(reponse.data.url)

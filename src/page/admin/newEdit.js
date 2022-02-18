@@ -1,6 +1,8 @@
 import { get, update } from "../../api/products";
 import NavAdmin from "./navAdmin";
-
+import axios from "axios";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css"
 
 const AdminEditNew = {
   // render() hiển thị giao diện ra browser
@@ -21,7 +23,7 @@ const AdminEditNew = {
                   <div class="mt-5 flex lg:mt-0 lg:ml-4">
 
                     <span class="sm:ml-3">
-                      <a href="/admin/news"><button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <a href="/#/admin/news"><button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <!-- Heroicon name: solid/check -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
@@ -73,8 +75,9 @@ const AdminEditNew = {
           
                         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                           <label for="" class="block text-sm font-medium text-gray-700">Hình ảnh</label>
-                          <input type="text" name="" id="img-post" value="${data.imageIntro}" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
+                          <input type="file" name="" id="img-post" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                          <input type="hidden" name="" value="${data.imageIntro}" id="img-val">
+                          </div>
 
                         <div class="col-span-6 sm:col-span-3">
                         <label for="first-name" class="block text-sm font-medium text-gray-700">Giá niêm yết</label>
@@ -113,21 +116,69 @@ const AdminEditNew = {
         // nhận tso id từ file main.js
       // gán id form vào biến formAdd
       const formAdd = document.querySelector("#form-add");
+      const imgPost = document.querySelector("#img-post")
       //event khi ấn submit thì thực thi logic
-      formAdd.addEventListener("submit",(e) => {
-        // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
-        e.preventDefault();
-        console.log("submites");
-        update({
-          id: id,
-          name: document.querySelector("#title-post").value,
-          imageIntro: document.querySelector("#img-post").value,
-          price: document.querySelector("#price-post").value,
-          sale: document.querySelector("#sale-post").value,
-          content: document.querySelector("#desc-post").value
+
+      imgPost.addEventListener("change",async (e) => {
+        const file = e.target.files[0];
+        const CLOUDINARY = 'https://api.cloudinary.com/v1_1/djh2fjlic/image/upload';
+        // djh2fjlic: Cloud Name (Dashboard Cloudinary)
+
+        const formData = new FormData();
+        
+        // append: chèn tập hợp các đối tượng
+        formData.append('file', file);
+        formData.append('upload_preset', "gh24ptqi");
+        // cloudinary -> setting -> upload -> add upload preset -> unsigned -> name preset
+        // upload file và 1 đoạn chuỗi tạo ở cloudinary 
+
+        // call api cloudinary
+        const reponse = await axios.post(CLOUDINARY, formData, {
+          headers: {
+            "Content-Type": "application/form-data"
+          }
         });
-        console.log(update)
-      }) 
+        // console.log(reponse.data.url);
+
+        if(reponse.data.url !==  ""){
+          formAdd.addEventListener("submit",(e) => {
+            // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
+            e.preventDefault();
+            // console.log("submites");
+            update({
+              id: id,
+              name: document.querySelector("#title-post").value,
+              imageIntro: reponse.data.url,
+              price: document.querySelector("#price-post").value,
+              sale: document.querySelector("#sale-post").value,
+              content: document.querySelector("#desc-post").value
+            });
+            // console.log(update)
+            toastr.success("Sửa sản phẩm thành công");
+          }) 
+        }
+        if(reponse.data.url === null){
+          console.log("abc");
+          formAdd.addEventListener("submit",(e) => {
+            // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
+            e.preventDefault();
+            console.log("submites");
+            update({
+              id: id,
+              name: document.querySelector("#title-post").value,
+              imageIntro: document.querySelector("#img-val").value,
+              price: document.querySelector("#price-post").value,
+              sale: document.querySelector("#sale-post").value,
+              content: document.querySelector("#desc-post").value
+            });
+            console.log(update)
+          }) 
+        }
+
+      })
+
+      
+
     }
 }
 export default AdminEditNew;

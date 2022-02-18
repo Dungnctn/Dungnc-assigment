@@ -28,7 +28,7 @@ router.on("/admin/*", () => {}, {
       }else{
         document.location.href="/#/";
       }
-      console.log(userId);
+      // console.log(userId);
     }else{
       document.location.href="/#/";
     }
