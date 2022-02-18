@@ -249,12 +249,10 @@
   "products": [
     {
       "id": 504038,
-      "catePro": 1,
-      "nameCate": "Áo Nam",
       "name": "Matchplay Long Robe Heather Grey",
       "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-still-life-web.jpeg?alt=media&token=98d8d774-5fc6-4e84-96b8-c11ec8c712a4",
       "price": "95",
-      "sale": "90",
+      "sale": "92",
       "size": [
         "XS",
         "S",
@@ -582,15 +580,9 @@
   "users": [
     {
       "email": "Dungncph16456@fpt.edu.vn",
-      "password": "$2a$10$UzakVehfiqzOo55jtY1IrezA.8LWcnTl03ya8X912L4lTOgjI0dE.",
+      "password": "$2a$10$M0djk.68E.3uXaIwNLm8quqpUxAsny2l15mjezV6gQOZV8SH4Vjk.",
       "username": "dung",
       "id": 1
-    },
-    {
-      "email": "cresht2000@gmail.com",
-      "password": "$2a$10$/WX6b2s9GMNNJVtoJOnh8uwl7rrYctIKQMfG33npJ1JyQQMEFAf0G",
-      "username": "a",
-      "id": 2
     }
   ]
 }

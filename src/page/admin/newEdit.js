@@ -1,4 +1,4 @@
-import { add, get, update } from "../../api/products";
+import { get, update } from "../../api/products";
 import NavAdmin from "./navAdmin";
 
 
@@ -126,7 +126,7 @@ const AdminEditNew = {
           sale: document.querySelector("#sale-post").value,
           content: document.querySelector("#desc-post").value
         });
-        console.log(add)
+        console.log(update)
       }) 
     }
 }

@@ -5,7 +5,9 @@ import Slider from "./slide";
 const Home = {
     async render() {
         return /*html*/ `
+        <div id="header">
             ${Header.render()}
+        </div>
             ${Slider.render()}
             ${await BorderNew.render()}
             ${Footer.render()}

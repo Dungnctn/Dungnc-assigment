@@ -1,7 +1,6 @@
 import { cate } from "../api/products";
 import Footer from "../conponent/footer";
 import Header from "../conponent/header";
-import Slider from "./slide";
 const renderIdCate = {
     async render(catePro) {
         // detructoring: lấy thuộc tính làm tên biến trong object

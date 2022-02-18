@@ -1,6 +1,11 @@
 import { get } from "../api/products";
 import Header from "../conponent/header";
 import Footer from "../conponent/footer";
+import { $ } from "../selector";
+import { addToCart } from "./addCart";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css"
+
 const NewDetail = {
     async render(id) {
         const { data } = await get(id);
@@ -13,7 +18,7 @@ const NewDetail = {
             <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
               <li>
                 <div class="flex items-center">
-                  <a href="/" class="mr-2 text-sm font-medium text-gray-900">
+                  <a href="/#/" class="mr-2 text-sm font-medium text-gray-900">
                     Trang chủ
                   </a>
                   <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-5 text-gray-300">
@@ -45,6 +50,7 @@ const NewDetail = {
                 <img src="${data.imageIntro}" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover">
               </div>
             </div>
+            <input type="number" id="inputQty" name="" value="1" class="hidden">
             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
               <img src="${data.imageIntro}" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
             </div>
@@ -61,7 +67,7 @@ const NewDetail = {
             <!-- Options -->
             <div class="mt-4 lg:mt-0 lg:row-span-3">
               <h2 class="sr-only">Product information</h2>
-              <p class="text-3xl text-gray-900">${data.price}</p>
+              <p class="text-3xl text-gray-900">${data.sale}</p>
 
               <!-- Reviews -->
               <div class="mt-6">
@@ -97,7 +103,7 @@ const NewDetail = {
                 </div>
               </div>
 
-              <form class="mt-10" id="form-add">
+              
                 <!-- Colors -->
                 <div>
                   <h3 class="text-sm text-gray-900 font-medium">Màu</h3>
@@ -181,8 +187,8 @@ const NewDetail = {
                   </fieldset>
                 </div>
 
-                <button type="submit" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm vào giỏ</button>
-              </form>
+                <button type="submit" class="btnAddToCart mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm vào giỏ</button>
+              
             </div>
 
             <div class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -227,33 +233,42 @@ const NewDetail = {
     },
 
     async afterRender(id) {
-      const { data } = await get(id);
-      // nhận id từ file mainjs
-      const formSubmit = document.querySelector("#form-add");
-      var elems = document.getElementsByName('color-choice');
-      var length = elems.length;
-
-      formSubmit.addEventListener("submit", (e) => {
+      $(".btnAddToCart").addEventListener('click',async (e) => {
         e.preventDefault()
-        //ngăn thuộc tính submit tự động 
-        const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
-        // sử dụng 1 mảng để thêm obj tránh bị ghi đè, 
-        // chuyển đổi về dạng js để đổ data ra browser vì khi nhận từ web server nó luôn là dạng string
-        // console.log("abc")
-        let cartElement = {
-            id: id,
-            name: data.name,
-            imageIntro: data.imageIntro,
-            price: data.price,
-            size: document.querySelector("#size").value
-        };
-        cartList.push(cartElement);
-        // thêm element vào aray cartList
-        localStorage.setItem("cartList", JSON.stringify(cartList))
-        // Json.stringify chuyển về dạng string
-      // console.log(cartElement)
-      // window.location.pathname = "/cart"
+        const {data} = await get(id);
+        // {...data, quantity: 1}: là 1 hàm, tiếp đến là callback khi thêm sp thành công
+        addToCart({...data, quantity: +$("#inputQty").value}, () => {
+          toastr.success("Thêm sản phẩm vào giỏ hàng");
+        });
       })
+      
+      // const { data } = await get(id);
+      // // nhận id từ file mainjs
+      // const formSubmit = document.querySelector("#form-add");
+      // var elems = document.getElementsByName('color-choice');
+      // var length = elems.length;
+      // formSubmit.addEventListener("submit", (e) => {
+      //   e.preventDefault()
+
+        //ngăn thuộc tính submit tự động 
+      //   const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
+      //   // sử dụng 1 mảng để thêm obj tránh bị ghi đè, 
+      //   // chuyển đổi về dạng js để đổ data ra browser vì khi nhận từ web server nó luôn là dạng string
+      //   // console.log("abc")
+      //   let cartElement = {
+      //       id: id,
+      //       name: data.name,
+      //       imageIntro: data.imageIntro,
+      //       price: data.price,
+      //       size: document.querySelector("#size").value
+      //   };
+      //   cartList.push(cartElement);
+      //   // thêm element vào aray cartList
+      //   localStorage.setItem("cartList", JSON.stringify(cartList))
+      //   // Json.stringify chuyển về dạng string
+      // // console.log(cartElement)
+      // // window.location.pathname = "/cart"
+      // })
 
     }
 }

@@ -85,7 +85,7 @@ const Signup = {
                 // if(alertSignup)  window.location = "/"
                 document.querySelector(".succes").classList.add("block");
                 document.querySelector(".succes").classList.remove("hidden");
-                document.querySelector(".succes").innerHTML = "Đăng ký thành công!!" + `<a href="/signin" class="text-[#0f54d4]">Đăng nhập</a>`;
+                document.querySelector(".succes").innerHTML = "Đăng ký thành công!!" + `<a href="/#/signin" class="text-[#0f54d4]">Đăng nhập</a>`;
                 
             } catch (error) {
                 document.querySelector(".error").classList.add("block");

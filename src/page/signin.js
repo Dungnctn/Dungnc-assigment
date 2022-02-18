@@ -1,4 +1,6 @@
 import { signin } from "../api/user";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css"
 
 const Signin = {
     render() {
@@ -72,6 +74,12 @@ const Signin = {
                 // alert("Bạn đã đăng nhập thành công!");
                 // console.log(reponse);
                 localStorage.setItem("user", JSON.stringify(reponse.data.user));
+                toastr.success("Bạn đã đăng nhập thành công")
+                if(reponse.data.user.id === 1){ 
+                    document.location.href="/#/admin/dashboard" 
+                }else{
+                    document.location.href="/#/";
+                }
             } catch (error) {
                 document.querySelector(".er").classList.add("block");
                 document.querySelector(".er").classList.remove("hidden");
