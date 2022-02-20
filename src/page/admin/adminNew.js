@@ -75,6 +75,9 @@ const AdminNew = {
                               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Giá
                               </th>
+                              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Giá Sale
+                              </th>
                               <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Edit</span>
                               </th>
@@ -102,8 +105,13 @@ const AdminNew = {
                               <img src="${post.imageIntro}" alt="" width="30%" class="rounded-3xl">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-300 text-white-800">
                                 ${post.price}
+                              </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                ${post.sale}
                               </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

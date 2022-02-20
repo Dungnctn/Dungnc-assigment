@@ -250,28 +250,18 @@
     {
       "id": 504038,
       "name": "Áo dài",
-      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645170055/kvyefqskfmivpymchgrw.jpg",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645328581/be7kxqq6ndp0x6spgyyg.jpg",
       "price": "95",
-      "sale": "92",
+      "sale": "93",
       "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>"
     },
     {
       "id": 529585,
-      "catePro": 1,
-      "nameCate": "Áo Nam",
-      "name": "Matchplay Long Robe Heather Grey",
-      "categoryId": "346275",
-      "content": "\n\nMorning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>\n\nFall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>\nMade in the USA<br>\n\nBetween the Sheets Collection<br>",
-      "price": "95",
-      "sale": "0",
-      "introduce": "Wash (cold) and Dry on delicate cycle with like colors, Hang or Flat Dry. Steam press, use press cloth to avoid damaging spandex.<br>\n\nbody: 95% rayon, 5% spandex<br>\n\nMade in the USA<br>\n\nBetween the Sheets Collection<br>\n\nRobe measures approximately 54\" long from shoulder to hem, to hem taken from size S hanging (weight of robe adds a bit of length since it is jersey knit)<br>\n\n*Models are 5'7- 5' 11\", wearing size small<br>\n\n",
-      "imageIntro": "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-still-life-web.jpeg?alt=media&token=98d8d774-5fc6-4e84-96b8-c11ec8c712a4",
-      "album": [
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-melange-jersey-knit-robe-matchplay-f2-web.jpeg?alt=media&token=ff82d306-0935-4a88-bfa9-85658e9a0abe",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-grey-robe-matchplay-flat-web.jpeg?alt=media&token=c76d2193-7b99-4141-93a3-048de65cc32c",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-ivory-jersey-knit-robe-matchplay-d-web.jpeg?alt=media&token=bffbe10e-278d-4b5b-a731-ede0a3485fe9",
-        "https://firebasestorage.googleapis.com/v0/b/ahsion.appspot.com/o/images%2F51J025BC-ivory-robe-matchplay-still-life-web.jpeg?alt=media&token=69eed0f2-ed5f-4a25-aede-bc5ca19b151d"
-      ],
+      "name": "Áo dài trắng",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645331368/leq15hzdfmtayzc76sa8.jpg",
+      "price": "96",
+      "sale": "94",
+      "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>",
       "size": [
         "XS",
         "S",
@@ -571,10 +561,25 @@
       "classify": "male"
     },
     {
+      "name": "Vest nam",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645331532/donj7kmywpmk013ueelu.jpg",
+      "price": "99",
+      "sale": "96",
+      "content": "Áo vest nam đẹp là lựa chọn hàng đầu của các cầu thủ bóng đá. Bởi vì, ngoài những bộ đồ thể thao hàng ngày trên sân tập, thì việc phải tham dự các bữa tiệc và các buổi họp báo là công việc bắt buộc với với các cầu thủ danh tiếng. Ngoài ra, bộ vest nam đẹp còn thể hiện đẳng cấp của giới cầu thủ",
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "M-L"
+      ],
+      "classify": "female",
+      "id": 625209
+    },
+    {
       "name": "helo",
-      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645170223/pz5usks7udgvzjda8xjo.jpg",
-      "price": "30",
-      "sale": "29",
+      "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645374376/pju32t96wrvffamt2xch.jpg",
+      "price": "199",
+      "sale": "179",
       "content": "helo baby",
       "size": [
         "XS",
@@ -582,7 +587,8 @@
         "M",
         "M-L"
       ],
-      "id": 625209
+      "classify": "female",
+      "id": 625210
     }
   ],
   "users": [

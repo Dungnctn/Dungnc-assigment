@@ -11,7 +11,7 @@ const NavAdmin = {
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="/#/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Thống kê</a>
+                    <a href="/#/admin/dashboard" class="text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Thống kê</a>
                     <a href="/#/admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sản phẩm</a>
                     <a href="/#/admin/product" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tin tức</a>
                     </div>
@@ -104,7 +104,7 @@ const NavAdmin = {
         
                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Cài đặt</a>
         
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Đăng xuất</a>
+                <a href="/#/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Đăng xuất</a>
                 </div>
             </div>
             </div>

@@ -5,6 +5,8 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { reRender } from "../../reRender";
 import AdminNew from "./adminNew";
+import $ from 'jquery';
+import validate from 'jquery-validation';
 
 const AdminAddNew = {
   // render() hiển thị giao diện ra browser
@@ -70,7 +72,7 @@ const AdminAddNew = {
                     <div class="px-4 py-5 bg-white sm:p-6">
                       <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium text-gray-700">Tiêu đề</label>
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">Tên sản phẩm</label>
                         <input type="text" name="" id="title-post" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
           
@@ -154,7 +156,8 @@ const AdminAddNew = {
                     "S",
                     "M",
                     "M-L"
-                  ]
+                  ],
+            classify: "female"
           });
           // console.log(add)
           toastr.success("Bạn đã thêm sản phẩm");

@@ -1,8 +1,9 @@
-import { get, update } from "../../api/products";
+import { add, get, update } from "../../api/products";
 import NavAdmin from "./navAdmin";
 import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css"
+import { reRender } from "../../reRender";
 
 const AdminEditNew = {
   // render() hiển thị giao diện ra browser
@@ -64,7 +65,7 @@ const AdminEditNew = {
                 </div>
               </div>
               <div class="md:col-span-2">
-                <form id="form-add">
+                <form id="form-edit">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                       <div class="grid grid-cols-6 gap-6">
@@ -76,7 +77,8 @@ const AdminEditNew = {
                         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                           <label for="" class="block text-sm font-medium text-gray-700">Hình ảnh</label>
                           <input type="file" name="" id="img-post" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                          <input type="hidden" name="" value="${data.imageIntro}" id="img-val">
+                          
+                          <img src="${data.imageIntro}" class="hidden" id="img-preview" alt="">
                           </div>
 
                         <div class="col-span-6 sm:col-span-3">
@@ -115,69 +117,49 @@ const AdminEditNew = {
     afterRender(id){
         // nhận tso id từ file main.js
       // gán id form vào biến formAdd
-      const formAdd = document.querySelector("#form-add");
+      const formEdit = document.querySelector("#form-edit");
       const imgPost = document.querySelector("#img-post")
-      //event khi ấn submit thì thực thi logic
+      const imgPreview = document.querySelector("#img-preview");
+      const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/djh2fjlic/image/upload";
+      const CLOUDINARY_PRESET = "gh24ptqi";
+      let imgLink = "";
 
       imgPost.addEventListener("change",async (e) => {
-        const file = e.target.files[0];
-        const CLOUDINARY = 'https://api.cloudinary.com/v1_1/djh2fjlic/image/upload';
-        // djh2fjlic: Cloud Name (Dashboard Cloudinary)
+        imgPreview.src = URL.createObjectURL(e.target.files[0]);
+      });
 
-        const formData = new FormData();
-        
-        // append: chèn tập hợp các đối tượng
-        formData.append('file', file);
-        formData.append('upload_preset', "gh24ptqi");
-        // cloudinary -> setting -> upload -> add upload preset -> unsigned -> name preset
-        // upload file và 1 đoạn chuỗi tạo ở cloudinary 
-
-        // call api cloudinary
-        const reponse = await axios.post(CLOUDINARY, formData, {
-          headers: {
-            "Content-Type": "application/form-data"
+      formEdit.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const file = imgPost.files[0];
+          if(file){
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", CLOUDINARY_PRESET);
+            const {data} = await axios.post(CLOUDINARY_API, formData, {
+              headers: {
+                "Content-Type": "application/form-data"
+              }
+            });
+            imgLink = data.url;
           }
-        });
-        // console.log(reponse.data.url);
 
-        if(reponse.data.url !==  ""){
-          formAdd.addEventListener("submit",(e) => {
-            // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
-            e.preventDefault();
-            // console.log("submites");
-            update({
-              id: id,
-              name: document.querySelector("#title-post").value,
-              imageIntro: reponse.data.url,
-              price: document.querySelector("#price-post").value,
-              sale: document.querySelector("#sale-post").value,
-              content: document.querySelector("#desc-post").value
-            });
-            // console.log(update)
-            toastr.success("Sửa sản phẩm thành công");
-          }) 
-        }
-        if(reponse.data.url === null){
-          console.log("abc");
-          formAdd.addEventListener("submit",(e) => {
-            // preventDefault() ko cho xử lý mặc định hay là dừng mặc định
-            e.preventDefault();
-            console.log("submites");
-            update({
-              id: id,
-              name: document.querySelector("#title-post").value,
-              imageIntro: document.querySelector("#img-val").value,
-              price: document.querySelector("#price-post").value,
-              sale: document.querySelector("#sale-post").value,
-              content: document.querySelector("#desc-post").value
-            });
-            console.log(update)
-          }) 
-        }
-
-      })
-
-      
+          update({
+            id,
+            name: document.querySelector("#title-post").value,
+            imageIntro: imgLink ? imgLink : imgPreview.src,
+            price: document.querySelector("#price-post").value,
+            sale: document.querySelector("#sale-post").value,
+            content: document.querySelector("#desc-post").value,
+            size: [ "XS",
+                    "S",
+                    "M",
+                    "M-L"
+                  ],
+            classify: "female"
+          })
+          toastr.success("Sửa sản phẩm thành công");
+          window.location.href = "/#/admin/news";
+        })
 
     }
 }
