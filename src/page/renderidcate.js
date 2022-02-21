@@ -5,7 +5,8 @@ const renderIdCate = {
     async render(catePro) {
         // detructoring: lấy thuộc tính làm tên biến trong object
         const { data } = await cate(catePro);
-        console.log(data)
+        const newCate = data.filter(item => item.catePro === catePro);
+        console.log(newCate);
         // const namecate = data.map((item) => {
         //     return item.nameCate
         // })
@@ -354,21 +355,21 @@ const renderIdCate = {
                 <form class="hidden lg:block">
                   <h3 class="sr-only">Categories</h3>
                   <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
-                    <li>
+                  <li>
                       <a href="/catePro/1">
-                        balo
+                        Áo nam
                       </a>
                     </li>
       
                     <li>
                       <a href="/catePro/2">
-                        Túi
+                        Áo nữ
                       </a>
                     </li>
       
                     <li>
                       <a href="/catePro/3">
-                        Trang sức
+                        Váy
                       </a>
                     </li>
       
@@ -588,7 +589,7 @@ const renderIdCate = {
                   <div class="bg-white">
             <div class="max-w-2xl mx-auto py-5 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-4 gap-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                ${data.map((post) => /*html*/ `
+                ${newCate.map((post) => /*html*/ `
 
                         <a href="/news/${post.id}" class="group">
                             <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">

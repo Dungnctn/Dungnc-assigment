@@ -82,8 +82,16 @@ const AdminAddNew = {
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium text-gray-700">Giá niêm yết</label>
-                        <input type="text" name="" id="price-post"  autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700">Giá niêm yết</label>
+                          <input type="text" name="" id="price-post"  autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div class="col-span-6 sm:col-span-3">
+                          <label for="first-name" class="block text-sm font-medium text-gray-700">Danh mục</label>
+                          <select id="cate-post">
+                            <option value="1">Áo Nam</option>
+                            <option value="2">Áo Nữ</option>
+                            <option value="3">Váy</option>
+                          </select>  
                         </div>
           
                         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
@@ -151,6 +159,7 @@ const AdminAddNew = {
             imageIntro: reponse.data.url, //reponse là obj trỏ đến data lấy url
             price: document.querySelector("#price-post").value,
             sale: document.querySelector("#sale-post").value,
+            catePro: document.querySelector("#cate-post").value,
             content: document.querySelector("#desc-post").value,
             size: [ "XS",
                     "S",
