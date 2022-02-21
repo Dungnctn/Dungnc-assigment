@@ -4,11 +4,12 @@ import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css"
 import { reRender } from "../../reRender";
+import { getAll } from "../../api/category";
 
 const AdminEditNew = {
   // render() hiển thị giao diện ra browser
     async render(id) {
-        const {data} = await get(id)    
+        const {data} = await get(id)
         return /*html*/ `
       ${NavAdmin.render()}
               <header class="bg-white shadow">
@@ -17,7 +18,7 @@ const AdminEditNew = {
                 <div class="lg:flex lg:items-center lg:justify-between">
                   <div class="flex-1 min-w-0">
                     <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-                      Thêm mới bài viết
+                      Chỉnh sửa sản phẩm
                     </h2>
                     
                   </div>
@@ -144,7 +145,7 @@ const AdminEditNew = {
           }
 
           update({
-            id,
+            categoryProductId: id,
             name: document.querySelector("#title-post").value,
             imageIntro: imgLink ? imgLink : imgPreview.src,
             price: document.querySelector("#price-post").value,

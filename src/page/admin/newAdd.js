@@ -91,7 +91,7 @@ const AdminAddNew = {
                           <label for="first-name" class="block text-sm font-medium text-gray-700">Danh mục</label>
                           <select id="cate-post">
                           ${data.map(item => /*html*/ `
-                            <option value="${item.id}">${item.name}</option>
+                            <option value=${item.id}>${item.name}</option>
                           `)}
                           </select>  
                         </div>
@@ -161,7 +161,7 @@ const AdminAddNew = {
             imageIntro: reponse.data.url, //reponse là obj trỏ đến data lấy url
             price: document.querySelector("#price-post").value,
             sale: document.querySelector("#sale-post").value,
-            catePro: document.querySelector("#cate-post").value,
+            categoryProductId: document.querySelector("#cate-post").value,
             content: document.querySelector("#desc-post").value,
             size: [ "XS",
                     "S",
