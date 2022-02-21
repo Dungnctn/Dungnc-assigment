@@ -53,7 +53,7 @@ router.on({
     print(NewDetail, data.id)
   },
 
-  "catePro/:id": ({data}) => {
+  "/catePro/:id": ({data}) => {
     print(renderIdCate, data.id)
     // console.log(data.catePro)
   },

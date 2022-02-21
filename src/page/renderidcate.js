@@ -5,7 +5,7 @@ const renderIdCate = {
     async render(id) {
         // detructoring: lấy thuộc tính làm tên biến trong object
         const { data } = await getCate(id);
-console.log(data);
+// console.log(data);
         return /*html*/ `
         ${Header.render()}
         <div class="max-w-9xl text-center mt-20">
@@ -585,18 +585,20 @@ console.log(data);
             <div class="max-w-2xl mx-auto py-5 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-4 gap-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 
-
-                        <a href="/news/${data.id}" class="group">
-                            <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                                <img src="${data.imageIntro}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="w-full h-full object-center object-cover group-hover:opacity-75">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                ${data.name}
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">${data.classify}</p>
-                            <p class="text-sm font-medium text-gray-900 line-through text-[#ccc]">${data.sale}</p>
-                            <p class="text-sm font-medium text-gray-900">${data.price}</p>
-                            </a>
+                  ${data.products.map(item => /*html*/`
+                  
+                  <a href="/news/${item.id}" class="group">
+                      <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                          <img src="${item.imageIntro}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="w-full h-full object-center object-cover group-hover:opacity-75">
+                      </div>
+                      <h3 class="mt-4 text-sm text-gray-700">
+                          ${item.name}
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-500">${item.classify}</p>
+                      <p class="text-sm font-medium text-gray-900 line-through text-[#ccc]">${item.sale}</p>
+                      <p class="text-sm font-medium text-gray-900">${item.price}</p>
+                      </a>
+                  `).join("")}
                     <!-- More products... -->
                 </div> 
                 </div>
