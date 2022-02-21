@@ -24,3 +24,8 @@ export const remove = (id) => {
     const url = `/categories/${id}`;
     return instance.delete(url)
 }
+
+export const getCate = (id) =>{
+    const url = `/categories/${id}?_embed=products`;
+    return instance.get(url);
+}

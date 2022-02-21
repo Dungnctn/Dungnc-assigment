@@ -253,7 +253,7 @@
       "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645328581/be7kxqq6ndp0x6spgyyg.jpg",
       "price": "95",
       "sale": "93",
-      "catePro": 2,
+      "CategoryProductId": 2,
       "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>"
     },
     {
@@ -262,7 +262,7 @@
       "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645331368/leq15hzdfmtayzc76sa8.jpg",
       "price": "96",
       "sale": "94",
-      "catePro": "2",
+      "CategoryProductId": 2,
       "content": "Morning chill, surprise knock on the door, or long weekend away - find your perfect go-to robe in our new range, Matchplay. In the most heavenly soft jersey knit, this will be the first thing you put on in the morning and when you get home in the evening.<br>Fall in love with little details like the wide attached tie, the figure flattering a-line shape, or the long cozy sleeves that push and stay up when they need to. There's nothing more luxurious than wrapping yourself up in slinky jersey full-length robe, instantly transporting you to a luxurious spa or hotel. This could be love, or just a match made in lounge heaven.<br>Made in the USA<br>Between the Sheets Collection<br>",
       "size": [
         "XS",
@@ -277,7 +277,7 @@
       "imageIntro": "http://res.cloudinary.com/djh2fjlic/image/upload/v1645331532/donj7kmywpmk013ueelu.jpg",
       "price": "99",
       "sale": "96",
-      "catePro": "2",
+      "CategoryProductId": 3,
       "content": "Áo vest nam đẹp là lựa chọn hàng đầu của các cầu thủ bóng đá. Bởi vì, ngoài những bộ đồ thể thao hàng ngày trên sân tập, thì việc phải tham dự các bữa tiệc và các buổi họp báo là công việc bắt buộc với với các cầu thủ danh tiếng. Ngoài ra, bộ vest nam đẹp còn thể hiện đẳng cấp của giới cầu thủ",
       "size": [
         "XS",
@@ -294,7 +294,7 @@
       "price": "199",
       "sale": "179",
       "content": "helo baby",
-      "catePro": "3",
+      "CategoryProductId": 3,
       "size": [
         "XS",
         "S",

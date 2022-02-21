@@ -1,8 +1,9 @@
-import { cate } from "../api/products"
+import { getAll } from "../api/category"
 import New from "./new"
 
 const BorderNew = {
     async render() {
+      const {data} = await getAll();
         return /*html*/ `
         <div class="max-w-9xl text-center mt-20">
                 <span class="uppercase font-bold text-4xl">sản phẩm phổ biến</span>
@@ -346,23 +347,13 @@ const BorderNew = {
                 <form class="hidden lg:block">
                   <h3 class="sr-only">Categories</h3>
                   <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
-                    <li>
-                      <a href="/catePro/1">
-                        Áo Nam
-                      </a>
-                    </li>
-      
-                    <li>
-                      <a href="/catePro/2">
-                        Áo Nữ
-                      </a>
-                    </li>
-      
-                    <li>
-                      <a href="/catePro/3">
-                        Váy
-                      </a>
-                    </li>
+                    ${data.map(item => /*html*/`
+                      <li>
+                          <a href="/catePro/${item.id}">
+                            ${item.name}
+                          </a>
+                        </li>
+                    `).join("")}
       
                   </ul>
       
