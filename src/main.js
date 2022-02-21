@@ -1,5 +1,8 @@
 import Navigo from "navigo";
+import AdminCate from "./page/admin/adminCate";
 import AdminNew from "./page/admin/adminNew";
+import AdminCateAdd from "./page/admin/cateAdd";
+import AdminEditCate from "./page/admin/cateEdit";
 import Dashboard from "./page/admin/dashboard";
 import AdminAddNew from "./page/admin/newAdd";
 import AdminEditNew from "./page/admin/newEdit";
@@ -56,6 +59,15 @@ router.on({
   },
   "/admin/dashboard": () => {
     print(Dashboard)
+  },
+  "/admin/category": () => {
+    print(AdminCate)
+  },
+  "/admin/category/add": () => {
+    print(AdminCateAdd)
+  },
+  "/admin/category/:id/edit": ({data}) => {
+    print(AdminEditCate, data.id)
   },
   "/admin/news": () => {
     print(AdminNew)
