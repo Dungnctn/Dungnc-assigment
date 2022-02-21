@@ -41,6 +41,10 @@
             "dest": "/"
         },
         {
+            "src": "/catePro/:catePro",
+            "dest": "/"
+        },
+        {
             "src": "/admin/news/:id/edit",
             "dest": "/"
         }
