@@ -52,7 +52,7 @@ router.on({
 
   "catePro/:catePro": ({data}) => {
     print(renderIdCate, data.catePro)
-    console.log(data.catePro)
+    // console.log(data.catePro)
   },
   "/admin/dashboard": () => {
     print(Dashboard)
