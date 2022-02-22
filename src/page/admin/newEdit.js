@@ -145,7 +145,7 @@ const AdminEditNew = {
           }
 
           update({
-            categoryProductId: id,
+            id,
             name: document.querySelector("#title-post").value,
             imageIntro: imgLink ? imgLink : imgPreview.src,
             price: document.querySelector("#price-post").value,
