@@ -1,4 +1,5 @@
 import { getAll } from "../api/category"
+import Category from "./catePro";
 import New from "./new"
 
 const BorderNew = {
@@ -346,16 +347,7 @@ const BorderNew = {
                 <!-- Filters -->
                 <form class="hidden lg:block">
                   <h3 class="sr-only">Categories</h3>
-                  <ul role="list" class="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
-                    ${data.map(item => /*html*/`
-                      <li>
-                          <a href="/catePro/${item.id}">
-                            ${item.name}
-                          </a>
-                        </li>
-                    `).join("")}
-      
-                  </ul>
+                  ${await Category.render()}
       
                   <div class="border-b border-gray-200 py-6">
                     <h3 class="-my-3 flow-root">

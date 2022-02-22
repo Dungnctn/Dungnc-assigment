@@ -24,7 +24,7 @@ export const remove = (id) => {
     const url = `/products/${id}`;
     return instance.delete(url)
 }
-export const cate = (catePro) => {
-    const url = `/products?catePro=${catePro}`;
+export const search = (keywork) => {
+    const url = `/products?q=${keywork}`;
     return instance.get(url);
 }

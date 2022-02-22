@@ -11,6 +11,7 @@ import CartPage from "./page/cart";
 import Home from "./page/home";
 import NewDetail from "./page/newDetail";
 import renderIdCate from "./page/renderidcate";
+import SearchProducts from "./page/renderSearch";
 import Signin from "./page/signin";
 import Signup from "./page/signup";
 
@@ -80,6 +81,10 @@ router.on({
   },
   "/cart": () => {
     print(CartPage)
+  },
+  "/renderSearch/:id": ({data}) => {
+    print(SearchProducts, data.id);
+    // console.log(data);
   },
   "/admin/news/add": () => {
     print(AdminAddNew)

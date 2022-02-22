@@ -70,7 +70,8 @@ const Header = {
         btnSearch.addEventListener("click", (e) => {
             e.preventDefault();
             const textVal = document.querySelector("#text-search").value;
-            console.log(textVal);
+            // console.log(textVal);
+            window.location.href = `/#/renderSearch/${textVal}`;
         }) 
     }
 }
