@@ -112,10 +112,12 @@ const CartPage = {
                                 </tbody>
                                 </table>
                                 
-                        </div>
+                                </div>
+                            <button type="button" id="checkout" class="bg-green-500 text-white mt-10 p-6 rounded-3xl ">CHECKOUT</button>
                         </div>
                     </div>
                 </div>
+            </div>
             
             `
         }
@@ -123,6 +125,7 @@ const CartPage = {
     },
 
     afterRender() {
+        const btnCheckout = document.querySelector("#checkout");
         $(".btn").forEach(btn => {
             const id = btn.dataset.id;
             btn.addEventListener("click", () => {
@@ -141,6 +144,11 @@ const CartPage = {
             })
         })
 
+        btnCheckout.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = '/#/checkout';
+        })
+        Header.afterRender()
         
     }
 }

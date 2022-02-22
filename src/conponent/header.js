@@ -47,6 +47,7 @@ const Header = {
 
     afterRender() {
         const account = document.querySelector("#username");
+        const btnSearch = document.querySelector("#btn-search");
         const btnLogout = document.querySelector("#logout");
 
         const renderUser = JSON.parse(localStorage.getItem('user'));
@@ -64,9 +65,7 @@ const Header = {
             })            
             
         }
-    },
-    afterRender() {
-        const btnSearch = document.querySelector("#btn-search");
+
         btnSearch.addEventListener("click", (e) => {
             e.preventDefault();
             const textVal = document.querySelector("#text-search").value;
