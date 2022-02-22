@@ -9,7 +9,6 @@ const Nav = {
                 <div class="float-right login">
                     <ul class="flex">
                         <li><a href="/#/" class=" py-10 px-4 font-bold float-right">Trang chủ</a></li>
-                        <li><a href="/#/product"  class=" py-10 px-4 font-bold float-right">Sản phẩm</a></li>
                         <li><a href="/#/blog"    class=" py-10 px-4 font-bold float-right">Blog</a></li>
                         <li><a href="/#/introduct" class=" py-10 px-4 font-bold float-right">Giới thiệu</a></li>
                         <li><a href="/#/contact" class=" py-10 px-4 font-bold float-right">Liên hệ</a></li>

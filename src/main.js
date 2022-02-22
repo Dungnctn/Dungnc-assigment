@@ -6,9 +6,13 @@ import AdminEditCate from "./page/admin/cateEdit";
 import Dashboard from "./page/admin/dashboard";
 import AdminAddNew from "./page/admin/newAdd";
 import AdminEditNew from "./page/admin/newEdit";
+import Blog from "./page/blog";
 import BorderNew from "./page/borderNew";
 import CartPage from "./page/cart";
+import Checkout from "./page/checkout";
+import Contact from "./page/contact";
 import Home from "./page/home";
+import Introduct from "./page/intro";
 import NewDetail from "./page/newDetail";
 import renderIdCate from "./page/renderidcate";
 import SearchProducts from "./page/renderSearch";
@@ -78,6 +82,18 @@ router.on({
   },
   "/signup": () => {
     print(Signup)
+  },
+  "/checkout": () => {
+    print(Checkout)
+  },
+  "/introduct": () => {
+    print(Introduct)
+  },
+  "/contact": () => {
+    print(Contact)
+  },
+  "/blog": () => {
+    print(Blog)
   },
   "/cart": () => {
     print(CartPage)
